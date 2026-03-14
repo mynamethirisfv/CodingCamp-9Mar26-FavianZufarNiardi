@@ -1,0 +1,704 @@
+/* ===================================
+   CSS Reset & Base Styles
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #ffffff;
+  min-width: 320px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================
+   Layout
+   =================================== */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* ===================================
+   Greeting Display Component
+   =================================== */
+
+.greeting-section {
+  text-align: center;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.time-display {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.date-display {
+  font-size: 18px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.greeting-message {
+  font-size: 24px;
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+/* ===================================
+   Focus Timer Component
+   =================================== */
+
+.timer-section {
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 72px;
+  font-weight: 700;
+  color: #333333;
+  margin: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.timer-controls button {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-width: 100px;
+  min-height: 44px;
+}
+
+.timer-controls button:hover {
+  background-color: #3a7bc8;
+}
+
+.timer-controls button:active {
+  transform: scale(0.98);
+}
+
+.timer-controls button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.timer-controls button[data-action="stop"] {
+  background-color: #d9534f;
+}
+
+.timer-controls button[data-action="stop"]:hover {
+  background-color: #c9302c;
+}
+
+.timer-controls button[data-action="reset"] {
+  background-color: #666666;
+}
+
+.timer-controls button[data-action="reset"]:hover {
+  background-color: #555555;
+}
+
+.timer-notification {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #5cb85c;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ===================================
+   Task Manager Component
+   =================================== */
+
+.task-section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.task-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input-group input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease;
+  min-height: 44px;
+}
+
+.task-input-group input:focus {
+  border-color: #4a90e2;
+  outline: 2px solid #4a90e2;
+  outline-offset: 0;
+}
+
+.task-input-group input::placeholder {
+  color: #999999;
+}
+
+.task-input-group button {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-width: 80px;
+  min-height: 44px;
+}
+
+.task-input-group button:hover {
+  background-color: #3a7bc8;
+}
+
+.task-input-group button:active {
+  transform: scale(0.98);
+}
+
+.task-input-group button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease;
+  min-height: 44px;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid #4a90e2;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.task-checkbox:hover {
+  background-color: #e8f2fc;
+}
+
+.task-checkbox.checked {
+  background-color: #4a90e2;
+}
+
+.task-checkbox.checked::after {
+  content: '✓';
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  color: #333333;
+  word-break: break-word;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-height: 32px;
+  min-width: 60px;
+}
+
+.task-actions button:active {
+  transform: scale(0.98);
+}
+
+.task-actions button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.task-actions .edit-btn {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.task-actions .edit-btn:hover {
+  background-color: #3a7bc8;
+}
+
+.task-actions .delete-btn {
+  background-color: #d9534f;
+  color: #ffffff;
+}
+
+.task-actions .delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.task-actions .save-btn {
+  background-color: #5cb85c;
+  color: #ffffff;
+}
+
+.task-actions .save-btn:hover {
+  background-color: #4cae4c;
+}
+
+.task-actions .cancel-btn {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+.task-actions .cancel-btn:hover {
+  background-color: #555555;
+}
+
+.task-edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #4a90e2;
+  border-radius: 4px;
+  background-color: #ffffff;
+  outline: 2px solid #4a90e2;
+}
+
+/* ===================================
+   Link Manager Component
+   =================================== */
+
+.links-section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.link-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.link-input-group input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease;
+  min-height: 44px;
+}
+
+.link-input-group input:focus {
+  border-color: #4a90e2;
+  outline: 2px solid #4a90e2;
+  outline-offset: 0;
+}
+
+.link-input-group input::placeholder {
+  color: #999999;
+}
+
+.link-input-group button {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-width: 80px;
+  min-height: 44px;
+}
+
+.link-input-group button:hover {
+  background-color: #3a7bc8;
+}
+
+.link-input-group button:active {
+  transform: scale(0.98);
+}
+
+.link-input-group button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease;
+  min-height: 44px;
+}
+
+.link-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.link-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.link-content:hover .link-name {
+  color: #4a90e2;
+  text-decoration: underline;
+}
+
+.link-content:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.link-name {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link-url {
+  font-size: 14px;
+  color: #666666;
+  word-break: break-all;
+}
+
+.link-delete-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #d9534f;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-height: 32px;
+  min-width: 60px;
+}
+
+.link-delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.link-delete-btn:active {
+  transform: scale(0.98);
+}
+
+.link-delete-btn:focus {
+  outline: 2px solid #d9534f;
+  outline-offset: 2px;
+}
+
+/* ===================================
+   Responsive Behavior
+   =================================== */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .time-display {
+    font-size: 36px;
+  }
+
+  .greeting-message {
+    font-size: 20px;
+  }
+
+  .timer-display {
+    font-size: 56px;
+  }
+
+  .timer-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .timer-controls button {
+    width: 100%;
+  }
+
+  .task-input-group {
+    flex-direction: column;
+  }
+
+  .task-input-group button {
+    width: 100%;
+  }
+
+  .link-input-group {
+    flex-direction: column;
+  }
+
+  .link-input-group input {
+    min-width: 100%;
+  }
+
+  .link-input-group button {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-wrap: wrap;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .link-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link-delete-btn {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 400px) {
+  .time-display {
+    font-size: 32px;
+  }
+
+  .timer-display {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ===================================
+   Error Messages & Notifications
+   =================================== */
+
+.error-message {
+  padding: 10px 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.storage-notification {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.storage-notification.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.storage-notification.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.storage-notification.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===================================
+   Accessibility Enhancements
+   =================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .task-item,
+  .link-item {
+    border-width: 2px;
+  }
+
+  button {
+    border: 2px solid currentColor;
+  }
+}
